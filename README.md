@@ -1,8 +1,8 @@
-# vin_decode_api
+###vin_decode_api
 
-Deploy your application to kube cluster:
+# Deploy your application to kube cluster:
 
-Prerequisites:
+# Prerequisites:
 
 1.Use existing or create an iam role with with amazonekscluster policy and amazoneksservice policy
 2.Use existing or create a cloudformation stack to create vpc  
