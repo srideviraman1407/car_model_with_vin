@@ -12,19 +12,20 @@
 6. To check nodes use "kubectl get nodes"
 7. Make sure git and kompose are installed
 
-Deploy the  application:
+## Deploy the  application:
 
-1.git clone https://github.com/srideviraman1407/vin_decode_api.git
-2.Use kompose convert for example from this folder docker-compose.yml to vin_decode.yaml to vin_decode_service.yaml gets created
-3.Use "kubectl -f car-model.yaml" and "kubectl -f car-model-service.yaml" 
-4. make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
-5. use "kubectl describe svc car-model" to get loadbalancer Ingress or external ip address
+1. git clone https://github.com/srideviraman1407/vin_decode_api.git
+2. Use kompose convert for example from this folder docker-compose.yml to vin_decode.yaml to vin_decode_service.yaml gets created
+3. Use "kubectl -f car-model.yaml" and "kubectl -f car-model-service.yaml" 
+4. Make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
+5. Use "kubectl describe svc car-model" to get loadbalancer Ingress or external ip address
 for example:http://203.0.113.0:5000/vin/WAUHGAFC6GN017093
 Autoscaling based on CPU usage and request:
 "kubectl autoscale deployment car-model-vin --cpu-percent=70 --min=1 --max=10"
 
-How continous delivery works:
-when develoers push code to github-->jenkins-->create and push docker images to docker registry-->spinnaker pipeline grabs image from docker registry and pushes the image to kubernetes
+## Continuous Delivery :
+
+when developers push code to github-->jenkins-->create and push docker images to docker registry-->spinnaker pipeline grabs image from docker registry and pushes the image to kubernetes
 
 Secure the api that require an api Key:
 Following are things to be done :
