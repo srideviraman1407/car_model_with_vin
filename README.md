@@ -1,4 +1,4 @@
-# car_model_with_vin
+# vin_decode_api
 
 Deploy your application to kube cluster:
 Prerequisites:
