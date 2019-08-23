@@ -4,13 +4,13 @@
 
 ### Prerequisites:
 
-1.Use existing or create an iam role with with amazonekscluster policy and amazoneksservice policy
-2.Use existing or create a cloudformation stack to create vpc  
-3.Create EKS-cluster with name "vin_decode_api" along with iam role,vpc and security groups
-4.Install kubectl(To communicate with kubernetes) and aws-iam-authenticator(configure aws-iam yaml configured with eks role arn)
-5.Use existing or create cloudformation stack to create worker nodes configured with EKS-cluster 
-6.To check nodes use "kubectl get nodes"
-7.Make sure git and kompose are installed
+1. Use existing or create an iam role with with amazonekscluster policy and amazoneksservice policy
+2. Use existing or create a cloudformation stack to create vpc  
+3. Create EKS-cluster with name "vin_decode_api" along with iam role,vpc and security groups
+4. Install kubectl(To communicate with kubernetes) and aws-iam-authenticator(configure aws-iam yaml configured with eks role arn)
+5. Use existing or create cloudformation stack to create worker nodes configured with EKS-cluster 
+6. To check nodes use "kubectl get nodes"
+7. Make sure git and kompose are installed
 
 Deploy the  application:
 
