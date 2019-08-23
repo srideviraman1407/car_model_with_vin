@@ -12,6 +12,11 @@ Prerequisites:
 Deploy an application:
 1.git clone https://github.com/srideviraman1407/car_model_with_vin.git car_model_project
 2.cd car_model_project
-3.kompose convert docker-compose.yml to 
-4.
+3.Use kompose convert for example from this folder docker-compose.yml to car-model.yaml to car-model-service.yaml gets created
+4.Use "kubectl -f car-model.yaml" and "kubectl -f car-model-service.yaml" 
+5. make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
+6. use "kubectl describe svc car-model" to get loadbalancer Ingress or external ip address
+for example:http://203.0.113.0:5000/vin/WAUHGAFC6GN017093
+
+
 
