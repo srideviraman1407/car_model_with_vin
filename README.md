@@ -84,18 +84,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
-## Authors
-
-* **Sridevi Raman** - *Initial work* - [srideviraman1407](https://github.com/srideviraman1407)
-
-
-# vin_decode_api
-
-## Deploy your application to kube cluster:
-
-### Prerequisites:
+#### Prerequisites to deploy the application in a Kubernetes Cluster
 
 1. Use existing or create an iam role with with amazonekscluster policy and amazoneksservice policy
 2. Use existing or create a cloudformation stack to create vpc  
@@ -105,7 +94,7 @@ Add additional notes about how to deploy this on a live system
 6. To check nodes use "kubectl get nodes"
 7. Make sure git and kompose are installed
 
-## Deploy the  application:
+#### Deploy the application in a Kubernetes Cluster
 
 1. git clone https://github.com/srideviraman1407/vin_decode_api.git
 2. Use kompose convert for example from this folder docker-compose.yml to vin_decode.yaml to vin_decode_service.yaml gets created
@@ -162,5 +151,9 @@ To get the API key:
     Select and copy the Consumer Key. You'll use it in the next step.
 Call API with a key:
 http://{silvercar}-test.apigee.net/helloapikey?apikey=apikey
+
+## Authors
+
+* **Sridevi Raman** - *Initial work* - [srideviraman1407](https://github.com/srideviraman1407)
 
 
