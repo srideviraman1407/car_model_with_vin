@@ -109,6 +109,8 @@ Autoscaling based on CPU usage and request:
 
 when developers push code to github-->jenkins-->create and push docker images to docker registry-->spinnaker pipeline grabs image from docker registry and pushes the image to kubernetes
 
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 Secure the api that require an api Key:
 Following are things to be done :
 --> Create an API proxy that requires an API key/
