@@ -8,7 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To Successfully run this API in your localhost, you will need to install
+
+1. git
+2. docker
 
 ```
 Give examples
@@ -16,18 +19,51 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Below is the step by step series of examples that tell you how to get the development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+1. Clone the repository in your local machine using the below command
 
 ```
-until finished
+git clone https://github.com/srideviraman1407/vin_decode_api.git
+```
+
+2. Change Directory to the folder vin_decode_api
+
+```
+cd vin_decode_api
+```
+
+3. Build the docker image
+
+```
+docker-compose build
+```
+
+4. Start containers from the docker image
+
+```
+docker-compose up -d
+```
+
+5. Verify the container is running 
+
+```
+docker ps
+```
+
+5. In your browser , call the API using the below example
+
+```
+http://localhost:5000/vin/WAUHGAFC6GN017093
+```
+
+6. The API will give a response with the make and year of the car based on the VIN provided 
+
+```
+{
+    "make": "Audi",
+    "year": "2016"
+}
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
