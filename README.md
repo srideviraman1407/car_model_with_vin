@@ -13,10 +13,6 @@ To Successfully run this API in your localhost, you will need to install
 1. git
 2. docker
 
-```
-Give examples
-```
-
 ### Installing
 
 Below is the step by step series of examples that tell you how to get the development env running
@@ -65,8 +61,6 @@ http://localhost:5000/vin/WAUHGAFC6GN017093
     "year": "2016"
 }
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
