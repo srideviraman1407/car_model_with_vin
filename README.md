@@ -80,7 +80,7 @@ Case 2: Send a corrupt VIN that is more than 17 characters
 ```
 http://localhost:5000/vin/WAUHGAFC6GN017093jsdhdskdsds
 ```
-expected result:
+Expected result:
 
 ```
 "car model not found, Please verify your vin and try again"
@@ -122,9 +122,20 @@ Autoscaling based on CPU usage and request:
 
 ## Continuous Delivery :
 
-when developers push code to github-->jenkins-->create and push docker images to docker registry-->spinnaker pipeline grabs image from docker registry and pushes the image to kubernetes
 
 ![alt text](https://github.com/srideviraman1407/vin_decode_api/blob/master/CI:CD_Pipeline.png)
+
+These steps are covered in the diagram:
+
+Developer pushes code to GitHub.
+GitHub triggers Jenkins.
+Jenkins builds a Docker image, tags and pushes it to Amazon Elastic Container Registry (Amazon ECR).
+The Spinnaker pipeline is triggered when Amazon ECR receives the new Docker image.
+Spinnaker then does following:
+Generate (bake) Kubernetes deployment files (dev and prod) using Helm.
+Deploy Kubernetes to the dev environment.
+Manual judgement: Our pipeline configuration requires a manual confirmation by a human before it can deploy the app to production. It will wait at this step before pipeline execution can continue.
+Deploy the code to the production environment.
 
 ## Authentication :
 
