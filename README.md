@@ -113,7 +113,7 @@ Expected result:
 
 1. git clone https://github.com/srideviraman1407/vin_decode_api.git
 2. Use kompose convert for example from this folder docker-compose.yml to vin_decode.yaml to vin_decode_service.yaml gets created
-3. Use "kubectl -f car-model.yaml" and "kubectl -f car-model-service.yaml" 
+3. Use 'kompose convert' and 'kubectl create -f'  
 4. Make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
 5. Use "kubectl describe svc car-model" to get loadbalancer Ingress or external ip address
 for example:http://203.0.113.0:5000/vin/WAUHGAFC6GN017093
