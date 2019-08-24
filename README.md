@@ -125,7 +125,9 @@ Autoscaling based on CPU usage and request:
 Auto-scaling the number of instances of the API based on:
 
 1. CPU usage
-    "kubectl autoscale deployment car-model-vin --cpu-percent=70 --min=1 --max=10"
+```
+    "kubectl autoscale deployment vin_decode_api_web --cpu-percent=70 --min=1 --max=10"
+```
 2. Number of requests
     
 
