@@ -122,6 +122,52 @@ Autoscaling based on CPU usage and request:
 
 ## Auto Scaling :
 
+Autoscaling is natively supported in Kubernetes. By default, you can automatically scale the number of Kubernetes pods based on the observed CPU utilization. To scale your application based on other monitored metrics, such as the number of incoming requests or the memory consumption, we can achieve that by leveraging the Prometheus and Kubernetes aggregator layers.
+
+Prometheus is widely used to monitor all the components of a Kubernetes cluster including the control plane, the worker nodes, and the applications running on the cluster.
+
+We can deploy the application and a HPA rule to autoscale with http_requests metric collected and exposed via Prometheus. The HPA rule allows us to scale the application pods between 2 and 10 replicas, and all pods serve a total of 100 requests per second.
+
+```
+cat sample-metrics-app.yaml
+...
+---
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2alpha1
+metadata:
+name: sample-metrics-app-hpa
+spec:
+    scaleTargetRef:
+        kind: Deployment
+        name: sample-metrics-app
+    minReplicas: 2
+    maxReplicas: 10
+    metrics:
+    - type: Object
+    object:
+        target:
+        kind: Service
+        name: sample-metrics-app
+        metricName: http_request
+        targetValue: 100
+ ```
+ 
+ Apply the recently created HPA rule as shown below:
+ 
+  ```
+ kubectl create -f sample-metrics-app.yaml
+
+deployment "sample-metrics-app" created
+service "sample-metrics-app" created
+servicemonitor "sample-metrics-app" created
+horizontalpodautoscaler "sample-metrics-app-hpa" created
+kubectl get hpa
+
+NAME                     REFERENCE                       TARGETS      MINPODS   MAXPODS   REPLICAS   AGE
+sample-metrics-app-hpa   Deployment/sample-metrics-app   866m / 100   2         10        2          1h
+
+ ```
+
 Auto-scaling the number of instances of the API based on:
 
 1. CPU usage
