@@ -64,7 +64,19 @@ http://localhost:5000/vin/WAUHGAFC6GN017093
 
 ## Running the tests
 
-case 1: Send a corrupt VIN that is more than 17 characters
+Case 1: Send a valid VIN  the following WMIs : WAU - Audi , WP0 - Porsche , WVW - Volkswagen
+```
+http://localhost:5000/vin/WAUHGAFC6GN017093
+```
+Expected Result :
+```
+{
+    "make": "Audi",
+    "year": "2016"
+}
+```
+
+Case 2: Send a corrupt VIN that is more than 17 characters
 ```
 http://localhost:5000/vin/WAUHGAFC6GN017093jsdhdskdsds
 ```
@@ -74,11 +86,11 @@ expected result:
 "car model not found, Please verify your vin and try again"
 ```
 
-case 2: inject the string with symbols
+Case 3: Inject the VIN with symbols
 ```
 http://localhost:5000/vin/WAUHGAFC6G%^*17093
 ```
-expected result:
+Expected result:
 
 ```
 "car model not found, Please verify your vin and try again"
