@@ -127,15 +127,16 @@ Autoscaling based on CPU usage and request:
 
 These steps are covered in the diagram:
 
-Developer pushes code to GitHub.
-GitHub triggers Jenkins.
-Jenkins builds a Docker image, tags and pushes it to Amazon Elastic Container Registry (Amazon ECR).
-The Spinnaker pipeline is triggered when Amazon ECR receives the new Docker image.
+* Developer pushes code to GitHub.
+* GitHub triggers Jenkins.
+* Jenkins builds a Docker image, tags and pushes it to Amazon Elastic Container Registry (Amazon ECR).
+* The Spinnaker pipeline is triggered when Amazon ECR receives the new Docker image.
+
 Spinnaker then does following:
-Generate (bake) Kubernetes deployment files (dev and prod) using Helm.
-Deploy Kubernetes to the dev environment.
-Manual judgement: Our pipeline configuration requires a manual confirmation by a human before it can deploy the app to production. It will wait at this step before pipeline execution can continue.
-Deploy the code to the production environment.
+* Generate (bake) Kubernetes deployment files (dev and prod) using Helm.
+* Deploy Kubernetes to the dev environment.
+* Manual judgement: Our pipeline configuration requires a manual confirmation by a human before it can deploy the app to production. It will wait at this step before pipeline execution can continue.
+* Deploy the code to the production environment.
 
 ## Authentication :
 
