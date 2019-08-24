@@ -64,23 +64,17 @@ http://localhost:5000/vin/WAUHGAFC6GN017093
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+case 1: send the character more than 17 
+http://localhost:5000/vin/WAUHGAFC6GN017093jsdhdskdsds
+expected result:
+"car model not found, Please verify your vin and try again"
 
-### Break down into end to end tests
+case 2: inject the string with symbols
+http://localhost:5000/vin/WAUHGAFC6G%^*17093
+expected result:
+"car model not found, Please verify your vin and try again"
 
-Explain what these tests test and why
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
