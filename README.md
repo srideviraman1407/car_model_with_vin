@@ -122,7 +122,7 @@ Autoscaling based on CPU usage and request:
 
 ## Continuous Delivery :
 
-We will use a continuous delivery platform like Spinnaker, originally developed by Netflix, for releasing software changes rapidly and reliably. Spinnaker makes it easier for developers to focus on writing code without having to worry about the underlying cloud infrastructure. It integrates seamlessly with Jenkins and other popular build tools.
+We will use a continuous delivery platform like Spinnaker for releasing software changes rapidly and reliably. Spinnaker makes it easier for developers to focus on writing code without having to worry about the underlying cloud infrastructure. It integrates seamlessly with Jenkins and other popular build tools.
 
 The below diagram showcases how to build a continuous delivery pipeline for workloads running on Kubernetes. 
 
