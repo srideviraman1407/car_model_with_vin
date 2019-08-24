@@ -111,6 +111,8 @@ when developers push code to github-->jenkins-->create and push docker images to
 
 ![alt text](https://github.com/srideviraman1407/vin_decode_api/blob/master/CI:CD_Pipeline.png)
 
+## Authentication :
+
 Secure the api that require an api Key:
 Following are things to be done :
 --> Create an API proxy that requires an API key/
