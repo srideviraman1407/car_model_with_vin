@@ -64,16 +64,25 @@ http://localhost:5000/vin/WAUHGAFC6GN017093
 
 ## Running the tests
 
-case 1: send the character more than 17 
+case 1: Send a corrupt VIN that is more than 17 characters
+```
 http://localhost:5000/vin/WAUHGAFC6GN017093jsdhdskdsds
+```
 expected result:
+
+```
 "car model not found, Please verify your vin and try again"
+```
 
 case 2: inject the string with symbols
+```
 http://localhost:5000/vin/WAUHGAFC6G%^*17093
+```
 expected result:
-"car model not found, Please verify your vin and try again"
 
+```
+"car model not found, Please verify your vin and try again"
+```
 
 
 ## Deployment
