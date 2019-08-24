@@ -120,6 +120,15 @@ for example:http://203.0.113.0:5000/vin/WAUHGAFC6GN017093
 Autoscaling based on CPU usage and request:
 "kubectl autoscale deployment car-model-vin --cpu-percent=70 --min=1 --max=10"
 
+## Auto Scaling :
+
+Auto-scaling the number of instances of the API based on:
+
+1. CPU usage
+    "kubectl autoscale deployment car-model-vin --cpu-percent=70 --min=1 --max=10"
+2. Number of requests
+    
+
 ## Continuous Delivery :
 
 We will use a continuous delivery platform like Spinnaker for releasing software changes rapidly and reliably. Spinnaker makes it easier for developers to focus on writing code without having to worry about the underlying cloud infrastructure. It integrates seamlessly with Jenkins and other popular build tools.
