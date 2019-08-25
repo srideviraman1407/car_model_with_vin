@@ -40,7 +40,10 @@ class carModels(Resource):
     def get(self, vin):
         """Function to get car models"""
         vin_pre = vin[0:3]
-        vin_year = vin[9]
+        if len(vin)< 9:
+            return "car model not found, Please verify your vin and try again", 404
+        else:
+            vin_year = vin[9]
         regex = re.compile('[@_!#$%^&*()<>?/|}{~:]')
         for car in CAR_MODEL:
             #To validate the vin with length , prefix and string standards
@@ -54,4 +57,3 @@ API.add_resource(carModels, "/vin/<string:vin>")
 if __name__ == "__main__":
     APP.run(host='0.0.0.0', debug=True)
     
-
