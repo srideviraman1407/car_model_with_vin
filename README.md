@@ -122,7 +122,17 @@ Autoscaling based on CPU usage and request:
 
 ## Auto Scaling :
 
-Autoscaling is natively supported in Kubernetes. By default, you can automatically scale the number of Kubernetes pods based on the observed CPU utilization. To scale your application based on other monitored metrics, such as the number of incoming requests or the memory consumption, we can achieve that by leveraging the Prometheus and Kubernetes aggregator layers.
+Auto-scaling the number of instances of the API based on:
+
+1. CPU usage
+
+Autoscaling is natively supported in Kubernetes. By default, you can automatically scale the number of Kubernetes pods based on the observed CPU utilization. 
+```
+    "kubectl autoscale deployment vin_decode_api_web --cpu-percent=70 --min=1 --max=10"
+```
+2. Number of requests
+
+To scale your application based on other monitored metrics, such as the number of incoming requests or the memory consumption, we can achieve that by leveraging the Prometheus and Kubernetes aggregator layers.
 
 Prometheus is widely used to monitor all the components of a Kubernetes cluster including the control plane, the worker nodes, and the applications running on the cluster.
 
@@ -135,7 +145,7 @@ We can deploy the application and a HPA rule to autoscale with http_requests met
 
 The custom API server we will use here is a Prometheus adapter which can collect metrics from Prometheus and send them to the HPA controller via REST queries 
 
-Here is a sample metrics app that can be used
+Here is a sample metrics app that can be used to autoscale based on number of requests (http_request)
 
 ```
 cat sample-metrics-app.yaml
@@ -176,15 +186,7 @@ NAME                     REFERENCE                       TARGETS      MINPODS   
 sample-metrics-app-hpa   Deployment/sample-metrics-app   866m / 100   2         10        2          1h
 
  ```
-
-Auto-scaling the number of instances of the API based on:
-
-1. CPU usage
-```
-    "kubectl autoscale deployment vin_decode_api_web --cpu-percent=70 --min=1 --max=10"
-```
-2. Number of requests
-    
+The HPA controller will scale up the number of application pods, based on the loads hitting the sample application service.
 
 ## Continuous Delivery :
 
