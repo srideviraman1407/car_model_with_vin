@@ -128,6 +128,15 @@ Prometheus is widely used to monitor all the components of a Kubernetes cluster 
 
 We can deploy the application and a HPA rule to autoscale with http_requests metric collected and exposed via Prometheus. The HPA rule allows us to scale the application pods between 2 and 10 replicas, and all pods serve a total of 100 requests per second.
 
+1. Configure the Kubernetes cluster to enable the aggregator layer and autoscaling API group.
+2. Deploy a Prometheus monitoring system.
+3. Deploy a custom API server and register it to the aggregator layer.
+4. Deploy a sample application and test the autoscaling.
+
+The custom API server we will use here is a Prometheus adapter which can collect metrics from Prometheus and send them to the HPA controller via REST queries 
+
+Here is a sample metrics app that can be used
+
 ```
 cat sample-metrics-app.yaml
 ...
