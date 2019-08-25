@@ -47,7 +47,7 @@ class carModels(Resource):
             if(vin_pre == car["vin_prefix"] and len(vin) == 17 and regex.search(vin) is None):
                 car_model_info = {'make':car["make"], 'year':car[vin_year]}
                 return car_model_info, 200
-        return "Car model not found", 404
+        return "car model not found, Please verify your vin and try again", 404
 
 API.add_resource(carModels, "/vin/<string:vin>")
 
