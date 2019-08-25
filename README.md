@@ -210,6 +210,8 @@ These steps are covered in the diagram:
 
 ## Authentication :
 
+While building an API based architecture, it is common practice to build a common security layer around these APIs, basically on the edge so that all the APIs are secured. There are multiple ways to build API security like writing some filters in the case of Java / J2EE application, installing some agents in front of APIs which can make policy decisions etc. One of the most widely used protocol for Authorization is OAuth2. AWS API Gateway provides built-in support to secure APIs using AWS Cognito OAuth2 scopes.
+
 Secure the api that require an api Key:
 Following are things to be done :
 --> Create an API proxy that requires an API key/
