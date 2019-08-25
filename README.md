@@ -117,8 +117,6 @@ Expected result:
 4. Make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
 5. Use "kubectl describe svc car-model" to get loadbalancer Ingress or external ip address
 for example:http://203.0.113.0:5000/vin/WAUHGAFC6GN017093
-Autoscaling based on CPU usage and request:
-"kubectl autoscale deployment car-model-vin --cpu-percent=70 --min=1 --max=10"
 
 ## Auto Scaling :
 
