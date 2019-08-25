@@ -107,7 +107,7 @@ Expected result:
 4. Install kubectl(To communicate with kubernetes) and aws-iam-authenticator(configure aws-iam yaml configured with eks role arn)
 5. Use existing or create cloudformation stack to create worker nodes configured with EKS-cluster 
 6. To check nodes use "kubectl get nodes"
-7. Make sure git and kompose are installed
+7. Make sure git and kompose are installed if docker-compose.yaml file is used
 
 #### Deploy the application in a Kubernetes Cluster
 
