@@ -169,7 +169,7 @@ spec:
         targetValue: 100
  ```
  
- Apply the recently created HPA rule as shown below:
+ Apply the above HPA rule as shown below:
  
   ```
  kubectl create -f sample-metrics-app.yaml
