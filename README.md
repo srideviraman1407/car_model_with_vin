@@ -1,4 +1,4 @@
-# vin_decode_api
+# vin_api
 
 The vin_decode_api expects a VIN, decodes the VIN and provides the make and model year of the vehicle.
 
@@ -20,13 +20,13 @@ Below is the step by step series of examples that tell you how to get the develo
 1. Clone the repository in your local machine using the below command
 
 ```
-git clone https://github.com/srideviraman1407/vin_decode_api.git
+git clone https://github.com/srideviraman1407/vin_api.git
 ```
 
 2. Change Directory to the folder vin_decode_api
 
 ```
-cd vin_decode_api
+cd vin_api
 ```
 
 3. Build the docker image
@@ -111,7 +111,7 @@ Expected result:
 
 #### Deploy the application in a Kubernetes Cluster
 
-1. git clone https://github.com/srideviraman1407/vin_decode_api.git
+1. git clone https://github.com/srideviraman1407/vin_api.git
 2. Use kompose convert for example from this folder docker-compose.yml to vin_decode.yaml and create vin_decode_service.yaml for load balancer
 3. Use 'kompose convert' and 'kubectl create -f'  
 4. Make sure service and pods are created by using "kubectl get pods" and "kubectl describe svc car-model"
@@ -126,7 +126,7 @@ Auto-scaling the number of instances of the API based on:
 
 Autoscaling is natively supported in Kubernetes. By default, you can automatically scale the number of Kubernetes pods based on the observed CPU utilization. 
 ```
-    "kubectl autoscale deployment vin_decode_api_web --cpu-percent=70 --min=1 --max=10"
+    "kubectl autoscale deployment vin__api_web --cpu-percent=70 --min=1 --max=10"
 ```
 2. Number of requests
 
@@ -192,7 +192,7 @@ We will use a continuous delivery platform like Spinnaker for releasing software
 
 The below diagram showcases how to build a continuous delivery pipeline for workloads running on Kubernetes. 
 
-![alt text](https://github.com/srideviraman1407/vin_decode_api/blob/master/CI:CD_Pipeline.png)
+![alt text](https://github.com/srideviraman1407/vin_api/blob/master/CI:CD_Pipeline.png)
 
 These steps are covered in the diagram:
 
